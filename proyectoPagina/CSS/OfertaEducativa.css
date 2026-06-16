@@ -1,0 +1,290 @@
+
+:root {
+    --color-principal: #1a365d;    /* Azul Marino Institucional */
+    --color-secundario: #2b6cb0;   /* Azul Corporativo */
+    --color-oro: #d69e2e;          /* Dorado de acento */
+    --color-oscuro: #2d3748;       /* Gris oscuro para textos */
+    --color-claro: #f0f4f8;        /* Gris azulado de fondo */
+    --color-blanco: #ffffff;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra: 0 10px 20px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.03);
+    --transicion: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    line-height: 1.7;
+    max-width: 1200px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: var(--color-blanco);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    padding: 25px 40px;
+    animation: deslizarAbajo 0.6s ease-out forwards;
+}
+
+#tituloP {
+    color: var(--color-principal);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+#tituloP::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-oro);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+#indiceP {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+#indiceP li a {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: var(--transicion);
+    display: inline-block;
+}
+
+#indiceP li a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+#indiceP li a:not([href]) {
+    color: #a0aec0;
+    cursor: not-allowed;
+    background-color: #f7fafc;
+}
+
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Grilla avanzada de 6 columnas */
+    gap: 30px;
+    width: 100%;
+    animation: deslizarArriba 0.8s ease-out forwards;
+}
+
+/* Estilo Base de las Tarjetas (.contenido) */
+.contenido {
+    background-color: var(--color-blanco);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(26, 54, 93, 0.08);
+}
+
+.contenido h2 {
+    color: var(--color-principal);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #edf2f7;
+}
+
+/* Listas internas estilizadas */
+.contenido ul, 
+.contenido ol {
+    padding-left: 20px;
+    color: #4a5568;
+}
+
+.contenido li {
+    margin-bottom: 8px;
+    font-size: 1.02rem;
+}
+
+.contenido p {
+    color: #4a5568;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
+
+
+
+/* Fila 1: Presentación, Grados y Materias */
+.contenido:nth-child(1) { 
+    grid-column: span 3; /* Ocupa la mitad izquierda */
+    border-top: 5px solid var(--color-principal);
+}
+.contenido:nth-child(2) { 
+    grid-column: span 1; /* Tarjeta compacta de grados */
+    border-top: 5px solid var(--color-oro);
+}
+.contenido:nth-column, 
+.contenido:nth-child(3) { 
+    grid-column: span 2; /* Tarjeta de materias */
+    border-top: 5px solid var(--color-secundario);
+}
+
+/* Fila 2: Perfil de Egreso (Ancho Completo) */
+.contenido:nth-child(4) { 
+    grid-column: span 6; /* Ocupa todo el ancho */
+    border-left: 6px solid var(--color-principal);
+}
+
+.contenido:nth-child(4) ol {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide los 10 puntos en dos columnas limpias */
+    gap: 10px 30px;
+    margin-bottom: 20px;
+}
+
+/* Botón de Video */
+.contenido:nth-child(4) a {
+    align-self: flex-start;
+    background-color: #e53e3e; /* Rojo distintivo estilo YouTube */
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: var(--transicion);
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contenido:nth-child(4) a:hover {
+    background-color: #c53030;
+    transform: scale(1.03);
+}
+
+/* Fila 3: Servicios e Inscripción (Distribución armónica) */
+.contenido:nth-child(5) { 
+    grid-column: span 3; /* Comedor escolar */
+    border-top: 5px solid var(--color-oro);
+}
+.contenido:nth-child(6) { 
+    grid-column: span 3; /* Calendario escolar */
+    border-top: 5px solid var(--color-principal);
+}
+.contenido:nth-child(7) { 
+    grid-column: span 6; /* Proceso de inscripción (Ancho total abajo) */
+    border-left: 6px solid var(--color-oro);
+}
+
+.contenido:nth-child(7) ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.contenido img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; /* Evita que las imágenes se estiren de forma desproporcionada */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-top: auto; /* Las empuja automáticamente al fondo de la tarjeta */
+    transition: var(--transicion);
+}
+
+.contenido img:hover {
+    transform: scale(1.02);
+}
+
+
+#piePagina2 {
+    grid-column: span 6; /* Se expande por completo al fondo de la grilla */
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 25px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: var(--sombra);
+    margin-top: 10px;
+}
+
+
+@keyframes deslizarAbajo {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes deslizarArriba {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 992px) {
+    .contenedor {
+        grid-template-columns: 1fr; /* Todo colapsa estructuralmente a una sola columna */
+    }
+
+    .contenido:nth-child(1),
+    .contenido:nth-child(2),
+    .contenido:nth-child(3),
+    .contenido:nth-child(4),
+    .contenido:nth-child(5),
+    .contenido:nth-child(6),
+    .contenido:nth-child(7),
+    #piePagina2 {
+        grid-column: span 1 !important; /* Resetea el ancho completo */
+    }
+
+    .contenido:nth-child(4) ol,
+    .contenido:nth-child(7) ul {
+        grid-template-columns: 1fr; /* Listas internas a una sola columna */
+    }
+    
+    .contenido img {
+        height: 200px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body { width: 94%; padding: 20px 0; }
+    header { padding: 20px; }
+    #tituloP { font-size: 1.6rem; }
+    #indiceP { flex-direction: column; gap: 6px; }
+    #indiceP li a { display: block; text-align: center; }
+}

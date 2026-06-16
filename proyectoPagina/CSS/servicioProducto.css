@@ -1,0 +1,273 @@
+
+:root {
+    --color-principal: #1a365d;    /* Azul Marino */
+    --color-secundario: #2b6cb0;   /* Azul de acento */
+    --color-oro: #d69e2e;          /* Dorado */
+    --color-oscuro: #2d3748;       /* Texto oscuro */
+    --color-claro: #f0f4f8;        /* Fondo gris sutil */
+    --color-blanco: #ffffff;
+    --color-rojo: #e53e3e;         /* Para el botón borrar */
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+    --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    line-height: 1.6;
+    max-width: 1250px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: var(--color-blanco);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    padding: 25px 40px;
+    animation: deslizarAbajo 0.6s ease-out forwards;
+}
+
+header h1 {
+    color: var(--color-principal);
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+header h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--color-oro);
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+#indiceP {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+#indiceP li a {
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: var(--transicion);
+    display: inline-block;
+}
+
+#indiceP li a:hover {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+}
+
+#indiceP li a:not([href]) {
+    color: #a0aec0;
+    cursor: not-allowed;
+    background-color: #f7fafc;
+}
+
+/* Notificación de NoScript */
+noscript p {
+    background-color: #fffaf0;
+    border-left: 5px solid var(--color-oro);
+    padding: 15px;
+    border-radius: 8px;
+    color: #dd6b20;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 35px;
+    animation: aparecer 0.8s ease-out forwards;
+}
+
+
+.producto {
+    background-color: var(--color-blanco);
+    border-radius: 16px;
+    box-shadow: var(--sombra);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transicion);
+    border-bottom: 4px solid transparent;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(26, 54, 93, 0.08);
+    border-bottom: 4px solid var(--color-oro);
+}
+
+/* Ajuste de imágenes del catálogo */
+.producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f7fafc;
+}
+
+.producto h2 {
+    color: var(--color-principal);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    min-height: 48px; /* Forzado para que mantengan la misma altura */
+    display: flex;
+    align-items: center;
+}
+
+.producto p {
+    color: #4a5568;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Empuja el precio y el input hacia abajo equitativamente */
+    text-align: left;
+}
+
+.producto .precio {
+    color: var(--color-secundario);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: block;
+}
+
+
+.producto input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    text-align: center;
+    transition: var(--transicion);
+    background-color: #f8fafc;
+}
+
+.producto input[type="number"]:focus {
+    border-color: var(--color-secundario);
+    background-color: var(--color-blanco);
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.15);
+}
+
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.botones input[type="submit"],
+.botones input[type="reset"] {
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transicion);
+    min-width: 160px;
+}
+
+/* Botón Comprar */
+.botones input[type="submit"] {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    box-shadow: 0 4px 6px rgba(26, 54, 93, 0.15);
+}
+
+.botones input[type="submit"]:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(43, 108, 176, 0.25);
+}
+
+/* Botón Borrar */
+.botones input[type="reset"] {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
+
+.botones input[type="reset"]:hover {
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(229, 62, 98, 0.2);
+}
+
+.botones input:active {
+    transform: translateY(0);
+}
+
+
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: var(--sombra);
+    margin-top: auto;
+}
+
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes deslizarAbajo {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    body { width: 94%; padding: 20px 0; }
+    header { padding: 20px; }
+    header h1 { font-size: 1.6rem; }
+    #indiceP { flex-direction: column; gap: 6px; }
+    #indiceP li a { display: block; text-align: center; }
+    .catalogo { grid-template-columns: 1fr; gap: 20px; }
+    .botones { flex-direction: column; gap: 10px; }
+    .botones input[type="submit"], .botones input[type="reset"] { width: 100%; }
+}

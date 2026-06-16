@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../imagenes/pavicon.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/formularios.css">
+    <title>administrador</title>
+</head>
+<body>
+    <div id="contenedor">
+        <form method="POST" action="../PHP/altaDB.php">
+            <label for="matricula">Matricula</label>
+            <input type="text" name="matricula" placeholder="matricula">
+            
+            <br><br>
+
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" name="nombre" placeholder="nombre" required>
+
+            <br><br>
+
+            <label for="telefono">Telefono</label>
+            <input type="text" name="telefono" placeholder="telefono" maxlength="10" required>
+
+            <br><br>
+
+            <label for="grado">Grado</label>
+            <input type="number" name="grado" placeholder="grado" min="1" max="6" required>
+
+            <br><br>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>

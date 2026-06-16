@@ -1,0 +1,83 @@
+/* Fondo de la página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    margin: 0;
+    padding: 40px;
+    color: #1e293b;
+}
+
+
+/* Tarjeta principal */
+body > * {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+h2 {
+    background: #2563eb;
+    color: white;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Datos del alumno */
+p {
+    background: white;
+    margin: 0;
+    padding: 12px 25px;
+    border-left: 5px solid #2563eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+
+p:last-of-type {
+    border-radius: 0 0 15px 15px;
+    margin-bottom: 25px;
+}
+
+
+/* Título materias */
+h3 {
+    background: #1d4ed8;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Lista */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+
+/* efecto al pasar mouse */
+li:hover {
+    transform: translateX(8px);
+    background: #dbeafe;
+}
+
+
+/* negritas */
+strong {
+    color: #2563eb;
+}

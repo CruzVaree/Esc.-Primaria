@@ -1,0 +1,1 @@
+alert("Bienvenido/a! a la escuela primaria José María Morelos y Pavón :)");

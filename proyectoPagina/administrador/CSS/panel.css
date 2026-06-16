@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: #07152d;
+    color: #ffffff;
+    padding: 50px;
+}
+
+/* Contenedor principal */
+.contenedor{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Encabezado */
+.titulo{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #ffffff;
+    border-left: 5px solid #2ea8ff;
+    padding-left: 15px;
+}
+
+/* Tarjetas */
+.menu{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 25px;
+}
+
+.card{
+    background: #0d1f3f;
+    border: 1px solid #1d345d;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.20);
+}
+
+/* Iconos */
+.icono{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #3cb7ff;
+}
+
+/* Títulos */
+.card h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+/* Descripción */
+.card p{
+    color: #b4c4df;
+    font-size: .95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Botones */
+.btn{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    background: #2ea8ff;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width:768px){
+
+    body{
+        padding: 25px;
+    }
+
+    .titulo{
+        font-size: 1.7rem;
+    }
+
+}

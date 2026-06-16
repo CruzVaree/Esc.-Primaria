@@ -1,0 +1,130 @@
+
+:root {
+    --color-principal: #1a365d;    /* Azul Marino */
+    --color-secundario: #2b6cb0;   /* Azul de acento */
+    --color-oro: #d69e2e;          /* Dorado */
+    --color-oscuro: #2d3748;       /* Texto oscuro */
+    --color-claro: #f0f4f8;        /* Fondo gris sutil */
+    --color-blanco: #ffffff;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+    --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-claro);
+    color: var(--color-oscuro);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.card {
+    background-color: var(--color-blanco);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border-top: 6px solid var(--color-oro); /* Detalle dorado superior de advertencia */
+    animation: entrarEscala 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Icono o Emoji Emocional */
+.icono {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.card h1 {
+    color: var(--color-principal);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-principal);
+    color: var(--color-blanco);
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(26, 54, 93, 0.12);
+    transition: var(--transicion);
+    width: 100%; /* Se vuelve de ancho completo para mejor ergonomía */
+}
+
+.btn:hover {
+    background-color: var(--color-secundario);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(43, 108, 176, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+
+@keyframes entrarEscala {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .card {
+        padding: 35px 25px;
+    }
+    
+    .card h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+    }
+}

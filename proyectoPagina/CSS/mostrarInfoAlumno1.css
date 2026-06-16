@@ -1,0 +1,174 @@
+
+:root {
+    --verde-degradado: linear-gradient(135deg, #0f9b58, #0b7a44); /* Verde institucional de la boleta */
+    --verde-texto: #0b7a44;
+    --color-oscuro: #2d3748;
+    --color-gris-fondo: #f0f4f8;
+    --color-blanco: #ffffff;
+    --fuente-boleta: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra-bloque: 0 10px 25px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-boleta);
+    background-color: var(--color-gris-fondo);
+    color: var(--color-oscuro);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.contenedor-boleta {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.perfil-resumen {
+    background-color: var(--color-blanco);
+    padding: 25px 35px;
+    border-radius: 16px;
+    box-shadow: var(--sombra-bloque);
+    border-left: 6px solid var(--verde-texto);
+}
+
+.perfil-resumen h2 {
+    color: var(--color-oscuro);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.datos-escolares {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.datos-escolares p {
+    font-size: 1.05rem;
+    color: #4a5568;
+}
+
+.datos-escolares p span {
+    color: var(--verde-texto);
+    font-weight: 600;
+}
+
+
+.boleta-tarjeta {
+    background-color: var(--color-blanco);
+    border-radius: 20px;
+    box-shadow: var(--sombra-bloque);
+    overflow: hidden; /* Mantiene los bordes redondeados con el encabezado adentro */
+    padding-bottom: 20px;
+}
+
+/* Encabezado idéntico a tu captura de pantalla */
+.boleta-tarjeta h3 {
+    background: var(--verde-degradado);
+    color: var(--color-blanco);
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 22px 35px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+
+.tabla-responsiva {
+    width: 100%;
+    overflow-x: auto; /* Evita que se rompa en pantallas pequeñas */
+    padding: 0 35px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left; /* Alineación limpia como tu imagen */
+    font-size: 1.05rem;
+}
+
+/* Encabezados de columnas */
+th {
+    color: #000000;
+    font-weight: 700;
+    padding: 12px 10px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+/* Celdas de datos */
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #edf2f7;
+    color: #2d3748;
+}
+
+/* Hover sutil al pasar por encima de las filas */
+tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+/* Columna de Materia en negritas ligeras */
+.nombre-materia {
+    font-weight: 500;
+    color: #1a202c;
+}
+
+/* Columna de promedio destacada de manera profesional */
+.promedio-celda {
+    font-weight: 700;
+    color: #1a202c;
+}
+
+
+.sin-datos {
+    margin: 20px 35px;
+    background-color: #fffaf0;
+    border-left: 4px solid #dd6b20;
+    padding: 20px;
+    border-radius: 10px;
+    color: #dd6b20;
+    font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    
+    .perfil-resumen {
+        padding: 20px;
+    }
+    
+    .datos-escolares {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .boleta-tarjeta h3 {
+        padding: 18px 20px;
+        font-size: 1.35rem;
+    }
+    
+    .tabla-responsiva {
+        padding: 0 15px;
+    }
+    
+    th, td {
+        padding: 10px 6px;
+        font-size: 0.95rem;
+    }
+}
